@@ -231,6 +231,10 @@ ADMINS = [('admin', '173302591@qq.com')]
 # WX ADMIN password(Two times md5)
 WXADMIN = '995F03AC401D6CABABAEF756FC4D43C7'
 
+
+log_path = os.path.join(BASE_DIR, 'logs')
+if not os.path.exists(log_path): os.mkdir(log_path)
+import time
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -256,8 +260,9 @@ LOGGING = {
         'log_file': {
             'level': 'INFO',
             'class': 'logging.handlers.RotatingFileHandler',
-            'filename': 'djangoblog.log',
-            'maxBytes': 16777216,  # 16 MB
+            'filename': os.path.join(log_path, 'testAutomation_{}.log'.format(time.strftime('%Y-%m-%d'))),
+            'maxBytes': 1024*1024*50,   #按日志文件大小切割
+            'backupCount': 5,
             'formatter': 'verbose'
         },
         # 'log_file':{
