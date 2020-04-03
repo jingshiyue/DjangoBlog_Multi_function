@@ -260,6 +260,20 @@ LOGGING = {
             'maxBytes': 16777216,  # 16 MB
             'formatter': 'verbose'
         },
+        # 'log_file':{
+        #             'level':'INFO',
+        #             'class':'logging.handlers.TimedRotatingFileHandler',
+        #             'filename':'testAutomation.log',
+        #             'formatter':'verbose',
+        #             # 每分钟切割一次日志
+        #             'when':'M',   #M 分钟
+        #             # 时间间隔
+        #             'interval':1,
+        #             # 保留5份日志
+        #             'backupCount':5,
+        #             'encoding':'utf-8'
+        #         },
+        
         'console': {
             'level': 'DEBUG',
             'filters': ['require_debug_true'],
