@@ -20,7 +20,7 @@ from DjangoBlog.sitemap import StaticViewSitemap, ArticleSiteMap, CategorySiteMa
 from DjangoBlog.feeds import DjangoBlogFeed
 from django.views.decorators.cache import cache_page
 from django.conf import settings
-from django.conf.urls.static import static
+from django.conf.urls.static import static   #注意导包,多个static
 from DjangoBlog.admin_site import admin_site
 from django.urls import include, path
 
